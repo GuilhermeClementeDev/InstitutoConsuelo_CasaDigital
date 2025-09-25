@@ -86,8 +86,41 @@ UPDATE alunos SET idade = 21 WHERE nome = 'João Silva';
 ```sql
 DELETE FROM alunos WHERE idade < 18
 ```
+## Pesquisa sobre principais SGDBS
+
+Principais SGBDs Relacionais (além do PostgreSQL)
+
+1- PostgreSQL
+- Principais características: Open-source, muito robusto, segue rigorosamente o padrão SQL.
+- Casos de uso típicos: Sistemas corporativos complexos, aplicativos financeiros, geolocalização, analytics e aplicações que precisam de integridade e escalabilidade.
+- Vantagens: Gratuito, altamente extensível, forte consistência e confiabilidade, ótimo suporte a dados complexos.
+- Desvantagens: Curva de aprendizado mais alta que MySQL, desempenho de leitura simples pode ser um pouco mais lento que MySQL em casos básicos.
+
+2- MySQL
+- Características: Open-source, popular, simples de instalar e usar. Suporta SQL padrão e é muito utilizado em aplicações web.
+- Casos de uso: WordPress, e-commerces, startups e sistemas web em geral.
+- Vantagens: Gratuito (há versão paga no MySQL Enterprise), grande comunidade, fácil integração com PHP e frameworks web.
+- Desvantagens: Nem sempre segue o padrão SQL fielmente, recursos avançados de consistência e escalabilidade são mais limitados que no PostgreSQL.
+
+3- Oracle Database
+- Características: SGBD proprietário da Oracle, extremamente robusto, voltado para grandes corporações. Tem recursos avançados de replicação, segurança, particionamento e análise.
+- Casos de uso: Bancos, telecomunicações, sistemas de missão crítica onde falha não é aceitável.
+- Vantagens: Altíssimo desempenho, confiabilidade, suporte a Big Data, integração com soluções Oracle.
+- Desvantagens: Custo de licença muito elevado, maior complexidade de administração.
+
+4- SQL Server (Microsoft)
+- Características: SGBD proprietário da Microsoft, bem integrado ao ecossistema Windows e Azure. Suporta T-SQL (Transact-SQL), que é uma extensão do SQL.
+- Casos de uso: Empresas que já usam Microsoft (ERP, BI, Azure, .NET).
+- Vantagens: Integração com ferramentas de análise (Power BI, Excel), bom suporte, interface gráfica amigável (SSMS).
+- Desvantagens: Licenciamento pago, menos flexível em sistemas Linux, dependência do ecossistema Microsoft.
+
+5- SQLite
+- Características: SGBD leve, que não roda como servidor, mas como biblioteca embutida dentro da aplicação.
+- Casos de uso: Aplicativos mobile, IoT, sistemas pequenos que não precisam de servidor de banco.
+- Vantagens: Extremamente leve, zero configuração, roda em qualquer lugar, ideal para protótipos.
+- Desvantagens: Não é feito para grandes cargas de dados, não suporta múltiplos usuários concorrentes em escala.
 
 ## Sites para ajudar no estudo
 https://www.w3schools.com/sql/                                                                                                  
-https://www.codewars.com/dashboard - Fazer Exercícios de querys em SQL
+ - Fazer Exercícios de querys em SQL
 
