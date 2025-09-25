@@ -13,16 +13,16 @@
 #### Conceitos Iniciais
 
 - **SGBD**: É um sistema que gerencia um banco de dados, permitindo a capacidade de manipular os dados do banco de maneira segura e organizada.
-- **Banco de Dados**: Qualquer repositório de informações com capacidade de adicionar, armazenar e organizar dados.  
+- **Banco de Dados**: Qualquer repositório de informações com capacidade de adicionar, armazenar e organizar dados.
 - **Modelo Relacional**: É o mais popular porém não é o mais flexível. Contudo, para as aplicações em gerais, é o mais utilizado.
 - **SQL**: Linguagem utilizada para manipular dados.
 
 #### Estrutura Fundamental
 
-- **Tabela**: Conjunto de Dados(como uma planilha).  
-- **Registro / Linha**: Uma linha dentro da tabela contendo dados.  
-- **Campo / Coluna**: Uma categoria de informação.  
-- **Casos de uso**: ERPs, bancos, e-commerces.  
+- **Tabela**: Conjunto de Dados(como uma planilha).
+- **Registro / Linha**: Uma linha dentro da tabela contendo dados.
+- **Campo / Coluna**: Uma categoria de informação.
+- **Casos de uso**: ERPs, bancos, e-commerces.
 
 #### Índices
 
@@ -30,19 +30,19 @@
 
 #### Tipos de Dados Essenciais
 
-- `VARCHAR(n)`: Texto com limite de caracteres  
-- `INTEGER`: Números inteiros  
-- `DATE`: Datas  
-- `BOOLEAN`: Verdadeiro/Falso  
-- `SERIAL`: Números sequenciais automáticos (ex.: IDs)  
+- `VARCHAR(n)`: Texto com limite de caracteres
+- `INTEGER`: Números inteiros
+- `DATE`: Datas
+- `BOOLEAN`: Verdadeiro/Falso
+- `SERIAL`: Números sequenciais automáticos (ex.: IDs)
 
 #### Restrições (Constraints)
 
-- `NOT NULL`: Campo obrigatório  
-- `UNIQUE`: Valor único na coluna  
-- `CHECK`: Define uma regra para os valores  
-- `PRIMARY KEY`: Identificador único de um registro. 
-- `FOREIGN KEY`: Responsável pela ligação entre tabelas.  
+- `NOT NULL`: Campo obrigatório
+- `UNIQUE`: Valor único na coluna
+- `CHECK`: Define uma regra para os valores
+- `PRIMARY KEY`: Identificador único de um registro.
+- `FOREIGN KEY`: Responsável pela ligação entre tabelas.
 
 ### DDL (Data Definition Language)
 
@@ -88,7 +88,7 @@ DELETE FROM alunos WHERE idade < 18
 ```
 ## Pesquisa sobre principais SGDBS
 
-Principais SGBDs Relacionais (além do PostgreSQL)
+Principais SGBDs Relacionais
 
 1- PostgreSQL
 - Principais características: Open-source, muito robusto, segue rigorosamente o padrão SQL.
@@ -120,7 +120,39 @@ Principais SGBDs Relacionais (além do PostgreSQL)
 - Vantagens: Extremamente leve, zero configuração, roda em qualquer lugar, ideal para protótipos.
 - Desvantagens: Não é feito para grandes cargas de dados, não suporta múltiplos usuários concorrentes em escala.
 
+## Como rodar o PostgreSQL na WSL
+```sql
+sudo service postgresql start
+sudo service postgresql status
+psql -U ($USER) -d teste
+\i './2.sript_sql_pratico.sql'
+```
+- service postgresql start → inicia o servidor PostgreSQL.
+- service postgresql status → verifica se está online.
+
+- psql → abre o cliente interativo do PostgreSQL.
+- -U ($USER) → indica o usuário do PostgreSQL.
+- -d teste → indica o banco de dados que você quer usar.
+	- Caso não tenha bdd criado
+	```sql
+		createdb -U ($USER) teste
+	```
+- \i → significa “input file”, ou seja, ler comandos SQL do arquivo.
+
+## Como apagar as tabelas
+```sql
+	DROP SCHEMA public CASCADE;
+	CREATE SCHEMA public;
+	-- ou no bash
+	dropdb -U ($USER) teste
+	createdb -U ($USER) teste
+```
+- CASCADE → deleta todas as tabelas, views e constraints dentro do schema.
+- CREATE SCHEMA public → recria o schema vazio.
+ou
+- Derruba e recria o banco inteiro, limpando todas as tabelas e dados.
+
 ## Sites para ajudar no estudo
-https://www.w3schools.com/sql/                                                                                                  
- - Fazer Exercícios de querys em SQL
+https://www.w3schools.com/sql/
+https://www.hackerrank.com/domains/sql - Fazer Exercícios de querys em SQL
 
