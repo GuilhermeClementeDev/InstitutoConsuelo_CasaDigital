@@ -154,5 +154,6 @@ ou
 
 ## Sites para ajudar no estudo
 https://www.w3schools.com/sql/
+
 https://www.hackerrank.com/domains/sql - Fazer Exercícios de querys em SQL
 
