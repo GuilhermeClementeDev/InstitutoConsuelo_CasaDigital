@@ -5,7 +5,7 @@ Pesquisei superficialmente os bancos de dados apresentados, mas escolhi me aprof
 [Ver script SQL](2.script_sql_pratico.sql)
 
 ## 3. Modelagem de Sistema
-
+![alt text](modelagem.png)
 ## 4. Leitura Complementar
 
 ## 5. Reflexão Crítica
