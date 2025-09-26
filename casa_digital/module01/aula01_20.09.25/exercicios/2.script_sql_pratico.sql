@@ -95,7 +95,7 @@ FROM employees
 ORDER BY start_data;
 
 -- 1 consulta com JOIN
--- Listar projetos concluídos com os funcionários que participaram.
+-- Listar projetos com os funcionários que participaram.
 SELECT p.project_name, p.project_status, e.employee_name, e.employee_role
 FROM allocate_employees_project a
 JOIN employees e ON a.employee_id = e.employee_id
