@@ -8,7 +8,7 @@ Pesquisei superficialmente os bancos de dados apresentados, mas escolhi me aprof
 ![alt text](modelagem.png)
 
 ## 4. Leitura Complementar
-Fazer no bus voltando para casa
+
 
 ## 5. Reflexão Crítica
 O excel é uma ferramenta acessível, prática e visual, ideal para pequenos conjuntos de dados ou tarefas individuais. Permite criar diversos mecanimos sem a necessidade de conhecimentos em programação. Por essas características acava se tornando muito popular em empresas de pequeno porte ou com baixa necessidade de dados. Quando ultrapassa os limites tecnicos, pode gerar: planilhas grandes podem se tornar lentas, difíceis de organizar e propensas a erros humanos.
@@ -17,3 +17,24 @@ Portanto, a escolha entre Excel e bdds depende muito do seu escopo de projeto. P
 Em resumo, é um projeto pequeno, ou individual, utilize execel por ter menos complexidade e mais apelo visual. Se for um projeto com necessidade mais robusta e segura, utilize um bdd.
 
 ## 6. Prática com Dataset Real
+```sql
+	-- query que buscar os tipos e faz a soma dos mesmo ordenando pelo media_type
+	-- Filmes e series e a quantidade que existe
+	SELECT media_type, COUNT(*) AS total
+	FROM netflix_titles
+	GROUP BY media_type;
+
+	-- Total de registros na tabela
+	SELECT COUNT(*)
+	FROM netflix_titles;
+
+	-- Buscar as produções de 2002
+	SELECT title, rating
+	FROM netflix_titles
+	WHERE release_year = 2002;
+
+	-- Buscar todos os brasileiros
+	SELECT title
+	FROM netflix_titles
+	WHERE country = 'Brazil';
+```
