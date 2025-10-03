@@ -1,29 +1,44 @@
-## Boas normas (27/09/25)
+## Modelagem Ninja (27/09/25)
 
-To do: 
-Ver direitinho Foreing key no script
-organizar anotações
+### Relembrando
+
+#### Oque é DDL, DML e Constrains
+
+DDL (Data definition language)
+-> Controle de estruturas do banco de dados. Exemplo Create Table, Alter Table, Drop Table.
+
+DML (Data modification language)
+-> Conjunto de comandos que manipulam dados. Exemplo
+Inserto into alunos(...), UPDATE alunos, DELETE FROM alunos where ...
+
+Constrains
+-> Regras aplicadas às colunas. Exemplo PK(primary key), FK(foreing key), NOT NULL, UNIQUE, CHECK (idade >= 0)
 
 ### Minhas Anotações/Pesquisas
 
-O que é Normalização de dados?
--> trazer os dados para uma norma, norma é oque dita as boas praticas.
-Normalização para um baco = clean code prog.
+#### O que é Normalização ?
+-> É um processo de organizar tabelas de um banco de dados relacional para reduzir a redundância (evitar dados repitidos) e garantir integridade (consistencia).
 
-Primira Forma Normal (1FN)
--> Cada celula um valor atomico
+#### Primeira Forma normal
+Regra: cada coluna deve ser atômica(sem valores múltiplos ou listas), e cada linha única.
+Errado:
+![alt text](1FN_violada.png)
 
-Segunda Forma Normal (2FN)
--> Um atributo não pode depender de uma chave completa da mesma tabela.
+Correto:
+![alt text](1FN_aplicada.png)
 
-Terceira forma Normal (3FN)
--> Não ter tabelas transitivas.
+#### Segunda Forma Normal
+Regra: 1FN + todos os atributos não-chave dependerem da chave primária inteira
+Errado:
+![alt text](2FN_violada.png)
 
-Pesquisar sobre views 
+Correto:
+![alt text](2FN_aplicada.png)
 
-NORMALIZAÇÃO           X           DESNORMALIZAÇÃO
-                
-- dados íntegros           - consultas rápidas
-- sem redundânia           - Relatórios simples
-- atualizações fáceis      - Menos Joins
-                           - Dados duplicados
+#### Terceira Forma Normal
+Regra: estar na 2FN e não ter dependência transitiva.
+Errado:
+![alt text](3FN_violada.png)
+
+Correto:
+![alt text](3FN_aplicada.png)
