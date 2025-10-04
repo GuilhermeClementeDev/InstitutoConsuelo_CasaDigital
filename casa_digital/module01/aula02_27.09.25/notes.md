@@ -42,3 +42,10 @@ Errado:
 
 Correto:
 ![alt text](3FN_aplicada.png)
+
+#### Normalização x Desnormalização
+
+Dados íntegros        Consultas rápidas
+Sem redundância       Relatórios Simpl
+Atualizações Fáceis   Menos Joins
+                      Dados Duplicados

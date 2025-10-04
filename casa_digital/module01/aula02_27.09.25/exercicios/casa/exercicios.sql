@@ -122,3 +122,20 @@ SELECT *
 FROM Pedidos
 JOIN Clientes ON Pedidos.ClienteID = Clientes.ClienteID
 WHERE Clientes.Nome = 'Ana Silva';
+
+Selecionar Valor de cada Pedido
+SELECT Pedidos.PedidoID,
+SUM (Produtos.Preco * ItensPedido.Quantidade) AS total
+FROM Pedidos
+JOIN ItensPedido ON ItensPedido.PedidoID = Pedidos.PedidoID
+JOIN Produtos ON Produtos.ProdutoID = ItensPedido.ProdutoID
+GROUP BY Pedidos.PedidoID;
+
+Query de quantidade de gasto por clientes
+SELECT Clientes.ClienteID, Clientes.Nome,
+SUM (Produtos.Preco * ItensPedido.Quantidade) AS total
+FROM Clientes
+JOIN Pedidos ON Pedidos.ClienteID = Clientes.ClienteID
+JOIN ItensPedido ON ItensPedido.PedidoID = Pedidos.PedidoID
+JOIN Produtos ON Produtos.ProdutoID = ItensPedido.ProdutoID
+GROUP BY Clientes.ClienteID;
