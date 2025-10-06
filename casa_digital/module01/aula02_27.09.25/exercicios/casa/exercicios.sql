@@ -104,38 +104,3 @@ JOIN Clientes ON Pedidos.Cliente = Clientes.ClientID
 JOIN ProdutoPedidos ON ProdutoPedidos.Pedido = Pedidos.PedidoID
 JOIN Produtos ON ProdutoPedidos.Produto = Produtos.ProdutoID
 JOIN Vendedores ON Pedidos.Vendedor = Vendedores.VendedorID;
-
-
--- Dataset do Julio
-
-Selecionar todos os cliente cadastrados
-SELECT *
-FROM clientes;
-
-Selecionar todos os produtos que a categoria = Acessórios
-SELECT *
-FROM Produtos
-WHERE Categoria = 'Acessórios';
-
-Selecionar todos os pedidos da ana
-SELECT *
-FROM Pedidos
-JOIN Clientes ON Pedidos.ClienteID = Clientes.ClienteID
-WHERE Clientes.Nome = 'Ana Silva';
-
-Selecionar Valor de cada Pedido
-SELECT Pedidos.PedidoID,
-SUM (Produtos.Preco * ItensPedido.Quantidade) AS total
-FROM Pedidos
-JOIN ItensPedido ON ItensPedido.PedidoID = Pedidos.PedidoID
-JOIN Produtos ON Produtos.ProdutoID = ItensPedido.ProdutoID
-GROUP BY Pedidos.PedidoID;
-
-Query de quantidade de gasto por clientes
-SELECT Clientes.ClienteID, Clientes.Nome,
-SUM (Produtos.Preco * ItensPedido.Quantidade) AS total
-FROM Clientes
-JOIN Pedidos ON Pedidos.ClienteID = Clientes.ClienteID
-JOIN ItensPedido ON ItensPedido.PedidoID = Pedidos.PedidoID
-JOIN Produtos ON Produtos.ProdutoID = ItensPedido.ProdutoID
-GROUP BY Clientes.ClienteID;

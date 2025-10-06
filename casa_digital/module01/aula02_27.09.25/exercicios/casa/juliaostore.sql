@@ -17,8 +17,7 @@ CREATE TABLE Produtos (
 CREATE TABLE Pedidos (
     PedidoID SERIAL PRIMARY KEY,
     ClienteID INT NOT NULL,
-    DataPedido DATE NOT NULL DEFAUL
-    T CURRENT_DATE,
+    DataPedido DATE NOT NULL DEFAULT CURRENT_DATE,
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID)
 );
 
