@@ -11,3 +11,8 @@ O projeto **Casa Digital** é uma iniciativa do Instituto Consuelo voltada para 
 ## Tecnologias Utilizadas
 
 - Banco de dados (PostgreSQL)
+
+### Como clonar:
+```shell
+	git clone --recurse-submodules git@github.com:GuilhermeClementeDev/InstitutoConsuelo_CasaDigital.git
+```
