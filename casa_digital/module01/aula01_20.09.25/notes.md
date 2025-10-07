@@ -152,6 +152,31 @@ psql -U ($USER) -d teste
 ou
 - Derruba e recria o banco inteiro, limpando todas as tabelas e dados.
 
+comandos importantes psql
+
+\conninfo
+->Mostra informações da conexão atual (usuário, host, porta, DB)
+\c nome_banco
+->Muda o banco conectado
+\q
+->Sai do psql
+
+\l
+->Lista todos os bancos existentes no servidor
+\du
+->Lista todos os usuários (roles)
+\dt
+->Lista todas as tabelas do esquema atual
+\d nome_tabela
+->Mostra a estrutura da tabela (colunas, tipos, chaves)
+\di
+->Lista índices
+\dv
+->Lista views
+\?
+-> manual
+\q
+quita
 ## Sites para ajudar no estudo
 https://www.w3schools.com/sql/
 
