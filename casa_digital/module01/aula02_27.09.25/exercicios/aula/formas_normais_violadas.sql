@@ -37,7 +37,7 @@ CREATE TABLE Vendedores(
 	VendedorID SERIAL PRIMARY KEY,
 	NomeVendedor VARCHAR(100),
 	PorcentagemVenda DECIMAL(5, 2)
-	-- Caso tenha maus algum dado entra aqui
+	-- Caso tenha mais algum dado entra aqui
 )
 
 CREATE TABLE Pedidos(
